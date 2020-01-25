@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import {Beer} from '../core/interfaces/beer';
+
+import { Beer } from '@core/interfaces';
+// TODO: solved core proxy routing
 
 @Injectable({
   providedIn: 'root'
