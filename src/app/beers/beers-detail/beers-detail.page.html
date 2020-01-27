@@ -1,9 +1,25 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>beers-detail</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>{{ beer?.name }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col class="ion-no-padding">
+        <ion-img [src]="beer?.imageUrl"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h1 class="ion-text-center">{{ beer?.name }}</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p>{{ beer?.artisan ? 'Homebrewed' : 'Commercial' }}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

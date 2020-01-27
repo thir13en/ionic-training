@@ -6,7 +6,7 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let beer of beers">
+    <ion-item *ngFor="let beer of beers" [routerLink]="beer.id">
       <ion-avatar slot="start">
         <ion-img [src]="beer.imageUrl"></ion-img>
       </ion-avatar>

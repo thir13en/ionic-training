@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Beer } from '../core/interfaces';
+import { Beer } from '@core/interfaces';
 import { BeersService } from '../services';
 
 @Component({
