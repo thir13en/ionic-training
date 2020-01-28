@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Beer } from '@core/interfaces';
-// TODO: solved core proxy routing
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class BeersService {
       artisan: true
     },
     {
-      id: '1',
+      id: '2',
       name: 'Montseny',
       imageUrl: 'https://cdn.shopify.com/s/files/1/0137/9872/products/MONTSENY-IPA-_ampolla_grande.jpg?v=1422615773',
       artisan: true
@@ -27,7 +27,12 @@ export class BeersService {
   }
 
   getBeer(beerId: string): Beer {
-    return { ...this.beers.find((beer: Beer) => beer.id === beerId) };
+    return { ...this.beers.find((beer: Beer) => beer.id === beerId) } as Beer;
+  }
+
+  deleteBeer(beerId: string): void {
+    this.beers = this.beers.filter((beer: Beer): boolean => beer.id !== beerId);
+    console.log(this.beers);
   }
 
 }

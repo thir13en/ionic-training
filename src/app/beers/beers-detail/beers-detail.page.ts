@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 import { Beer } from '@core/interfaces';
 import { BeersService } from '@app/services';
+import { ROUTES } from '@core/routing';
 
 
 @Component({
@@ -16,16 +17,23 @@ export class BeersDetailPage implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private beersService: BeersService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       if (paramMap.has('beerId')) {
-        const beerId: string = paramMap.get('beerId');
+        const beerId: string = paramMap.get('beerId') as string;
+
         this.beer = this.beersService.getBeer(beerId);
         console.log(this.beer);
       }
     });
+  }
+
+  deleteBeer(): void {
+    this.beersService.deleteBeer(this.beer.id);
+    this.router.navigate([ROUTES.BEERS]);
   }
 
 }

@@ -4,6 +4,9 @@
       <ion-back-button defaultHref="/beers"></ion-back-button>
     </ion-buttons>
     <ion-title>{{ beer?.name }}</ion-title>
+    <ion-button slot="primary" (click)="deleteBeer()">
+      <ion-icon name="trash" slot="icon-only"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
