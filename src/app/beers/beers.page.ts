@@ -11,6 +11,7 @@ import { BeersService } from '../services';
 export class BeersPage implements OnInit {
   beers: Beer[];
 
+
   constructor(private beersService: BeersService) { }
 
   ngOnInit() {

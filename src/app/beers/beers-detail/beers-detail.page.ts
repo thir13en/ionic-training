@@ -4,6 +4,7 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Beer } from '@core/interfaces';
 import { BeersService } from '@app/services';
 import { ROUTES } from '@core/routing';
+import { AlertController } from '@ionic/angular';
 
 
 @Component({
@@ -18,6 +19,7 @@ export class BeersDetailPage implements OnInit {
     private route: ActivatedRoute,
     private beersService: BeersService,
     private router: Router,
+    private alertController: AlertController,
   ) { }
 
   ngOnInit() {
@@ -32,8 +34,22 @@ export class BeersDetailPage implements OnInit {
   }
 
   deleteBeer(): void {
-    this.beersService.deleteBeer(this.beer.id);
-    this.router.navigate([ROUTES.BEERS]);
+    this.alertController.create({
+      header: 'Are you sure you want to delete?',
+      message: 'Once you delete the information will be lost forever...',
+      buttons: [{
+        text: 'No',
+        role: 'cancel',
+      }, {
+        text: 'Delete',
+        handler: (): void => {
+          this.beersService.deleteBeer(this.beer.id);
+          this.router.navigate([ROUTES.BEERS]);
+        }
+      }],
+    }).then(
+        (alertEl: HTMLIonAlertElement): Promise<void> => alertEl.present(),
+    );
   }
 
 }
