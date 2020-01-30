@@ -1,5 +1,7 @@
 {
   "name": "ionic-angular-training",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
