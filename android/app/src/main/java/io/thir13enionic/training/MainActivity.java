@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package io.thir13enionic.training;
 
 import android.os.Bundle;
 
