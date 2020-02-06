@@ -6,6 +6,6 @@
 
 <ion-content>
   <ion-list>
-    <app-beer-item *ngFor="let beer of beers" [beer]="beer"></app-beer-item>
+    <app-beer-item *ngFor="let beer of beers$ | async" [beer]="beer"></app-beer-item>
   </ion-list>
 </ion-content>

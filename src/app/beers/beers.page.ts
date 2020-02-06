@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Observable } from 'rxjs';
+
 import { Beer } from '@core/interfaces';
 import { BeersService } from '../services';
 
@@ -9,13 +11,13 @@ import { BeersService } from '../services';
   styleUrls: ['./beers.page.scss'],
 })
 export class BeersPage implements OnInit {
-  beers: Beer[];
+  beers$: Observable<Beer[]>;
 
 
   constructor(private beersService: BeersService) { }
 
   ngOnInit() {
-    this.beers = this.beersService.getBeers();
+    this.beers$ = this.beersService.getBeers$();
   }
 
 }

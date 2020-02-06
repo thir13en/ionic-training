@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 
+import { BehaviorSubject, Observable } from 'rxjs';
+
 import { Beer } from '@core/interfaces';
 
 
@@ -21,9 +23,10 @@ export class BeersService {
       artisan: true
     }
   ];
+  private beers$: BehaviorSubject<Beer[]> = new BehaviorSubject<Beer[]>([...this.beers]);
 
-  getBeers(): Beer[] {
-    return [...this.beers];
+  getBeers$(): Observable<Beer[]> {
+    return this.beers$.asObservable();
   }
 
   getBeer(beerId: string): Beer {
@@ -32,7 +35,7 @@ export class BeersService {
 
   deleteBeer(beerId: string): void {
     this.beers = this.beers.filter((beer: Beer): boolean => beer.id !== beerId);
-    console.log(this.beers);
+    this.beers$.next([...this.beers]);
   }
 
 }
