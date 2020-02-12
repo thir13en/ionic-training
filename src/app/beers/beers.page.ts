@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { Observable } from 'rxjs';
 
@@ -10,13 +10,14 @@ import { BeersService } from '../services';
   templateUrl: './beers.page.html',
   styleUrls: ['./beers.page.scss'],
 })
-export class BeersPage implements OnInit {
+export class BeersPage {
   beers$: Observable<Beer[]>;
 
 
   constructor(private beersService: BeersService) { }
 
-  ngOnInit() {
+  // ionic lifecycle hook
+  ionViewWillEnter(): void {
     this.beers$ = this.beersService.getBeers$();
   }
 

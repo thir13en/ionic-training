@@ -28,7 +28,6 @@ export class BeersDetailPage implements OnInit {
         const beerId: string = paramMap.get('beerId') as string;
 
         this.beer = this.beersService.getBeer(beerId);
-        console.log(this.beer);
       } else {
         this.router.navigate([ROUTES.BEERS]);
       }
