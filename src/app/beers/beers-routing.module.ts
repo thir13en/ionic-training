@@ -11,6 +11,18 @@ const routes: Routes = [
   {
     path: ':beerId',
     loadChildren: () => import('./beers-detail/beers-detail.module').then( m => m.BeersDetailPageModule)
+  },
+  {
+    path: 'discover',
+    loadChildren: () => import('./discover/discover.module').then( m => m.DiscoverPageModule)
+  },
+  {
+    path: 'discover',
+    loadChildren: () => import('./discover/discover.module').then( m => m.DiscoverPageModule)
+  },
+  {
+    path: 'offers',
+    loadChildren: () => import('./offers/offers.module').then( m => m.OffersPageModule)
   }
 ];
 
