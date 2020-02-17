@@ -44,6 +44,7 @@ const routes: Routes = [
     path: 'offers',
     loadChildren: () => import('./offers/offers.module').then( m => m.OffersPageModule)
   }
+  // TODO: set up edit and other routes in the past lesson and make sure they make sense for this app
 ];
 
 @NgModule({
