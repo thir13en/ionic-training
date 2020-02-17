@@ -13,7 +13,6 @@ import { BeersService } from '../services';
 export class BeersPage {
   beers$: Observable<Beer[]>;
 
-
   constructor(private beersService: BeersService) { }
 
   // ionic lifecycle hook
