@@ -1,9 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>discover</ion-title>
+    <ion-title>Discover Beers</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content *ngIf="beers$ | async as beers">
+  <ion-list>
+    <app-beer-item *ngFor="let beer of beers" [beer]="beer"></app-beer-item>
+  </ion-list>
 </ion-content>
