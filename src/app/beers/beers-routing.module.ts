@@ -40,7 +40,6 @@ const routes: Routes = [
       },
     ],
   },
-  // TODO: set up edit and other routes in the past lesson and make sure they make sense for this app
 ];
 
 @NgModule({

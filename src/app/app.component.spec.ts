@@ -46,6 +46,4 @@ describe('AppComponent', () => {
     expect(splashScreenSpy.hide).toHaveBeenCalled();
   });
 
-  // TODO: add more tests!
-
 });
