@@ -5,6 +5,7 @@
 </ion-header>
 
 <ion-content *ngIf="beers$ | async as beers">
+  <!-- TODO: add featured beer with a card -->
   <ion-list>
     <app-beer-item *ngFor="let beer of beers" [beer]="beer"></app-beer-item>
   </ion-list>

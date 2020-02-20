@@ -18,11 +18,11 @@
         <ion-card>
           <ion-card-title>{{ beer?.name }}</ion-card-title>
           <ion-card-subtitle>Another amazing beer</ion-card-subtitle>
+          <ion-img [src]="beer?.imageUrl"></ion-img>
+          <ion-card-content>
+            <p>{{ beer?.artisan ? 'Homebrewed' : 'Commercial' }}</p>
+          </ion-card-content>
         </ion-card>
-        <ion-img [src]="beer?.imageUrl"></ion-img>
-        <ion-card-content>
-          <p>{{ beer?.artisan ? 'Homebrewed' : 'Commercial' }}</p>
-        </ion-card-content>
       </ion-col>
     </ion-row>
   </ion-grid>
