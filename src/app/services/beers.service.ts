@@ -13,12 +13,16 @@ export class BeersService {
     {
       id: '1',
       name: 'Mumbai',
+      price: 2,
+      description: 'The kabbaddhi of beers is arguably the best homebrewed beer openly commencialized',
       imageUrl: 'https://media.area-gourmet.com/c/product/cerveza-vic-brewery-mumbai-520x520.jpeg',
       artisan: true
     },
     {
       id: '2',
       name: 'Montseny',
+      price: 2.2,
+      description: 'A wonder of homebrewed beers, it\'s IPA essence gives a the perfect flavour for a calmed gourmet afternoon',
       imageUrl: 'https://cdn.shopify.com/s/files/1/0137/9872/products/MONTSENY-IPA-_ampolla_grande.jpg?v=1422615773',
       artisan: true
     }
