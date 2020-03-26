@@ -8,13 +8,21 @@
   <ion-grid>
     <ion-row>
       <ion-col size="12" size-sm="8" offset-sm="2">
-        <ion-card [routerLink]="beers[0].id">
+        <ion-card>
           <ion-card-header>
             <ion-card-title>{{ beers[0].name }}</ion-card-title>
             <ion-card-subtitle>{{ beers[0].price | currency }} / unit</ion-card-subtitle>
           </ion-card-header>
           <ion-img [src]="beers[0].imageUrl"></ion-img>
           <ion-card-content>{{ beers[0].description }}</ion-card-content>
+          <div class="ion-text-right">
+            <ion-button
+                    fill="clear"
+                    color="primary"
+                    [routerLink]="beers[0].id"
+                    routerDirection="forward"
+            >More</ion-button>
+          </div>
         </ion-card>
       </ion-col>
     </ion-row>
