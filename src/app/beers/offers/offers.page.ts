@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { BeersService } from '@app/services';
+
 @Component({
   selector: 'app-offers',
   templateUrl: './offers.page.html',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OffersPage implements OnInit {
 
-  constructor() { }
+  constructor(private beersService: BeersService) { }
 
   ngOnInit() {
+    this.beersService.getOffers$().subscribe(console.log);
   }
 
 }

@@ -27,10 +27,25 @@ export class BeersService {
       artisan: true
     }
   ];
+  private offers: Beer[] = [
+    {
+      id: '3',
+      name: 'Brewdog',
+      description: 'A Punk IPA that will trash your senses',
+      price: 1.5,
+      artisan: true,
+      imageUrl: 'https://cdn.shopify.com/s/files/1/1176/1532/products/Thumbnail-PDP-Brewdogpunk_1024x1024.jpg'
+    }
+  ];
   private beers$: BehaviorSubject<Beer[]> = new BehaviorSubject<Beer[]>([...this.beers]);
+  private offers$: BehaviorSubject<Beer[]> = new BehaviorSubject<Beer[]>([...this.offers]);
 
   getBeers$(): Observable<Beer[]> {
     return this.beers$.asObservable();
+  }
+
+  getOffers$(): Observable<Beer[]> {
+    return this.offers$.asObservable();
   }
 
   getBeer(beerId: string): Beer {
