@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
+import { Observable } from 'rxjs';
+
+import { Beer } from '@core/interfaces';
 import { BeersService } from '@app/services';
 
 @Component({
@@ -7,12 +10,14 @@ import { BeersService } from '@app/services';
   templateUrl: './offers.page.html',
   styleUrls: ['./offers.page.scss'],
 })
-export class OffersPage implements OnInit {
+export class OffersPage {
+
+  beers$: Observable<Beer[]>;
 
   constructor(private beersService: BeersService) { }
 
-  ngOnInit() {
-    this.beersService.getOffers$().subscribe(console.log);
+  ionViewWillEnter() {
+    this.beers$ = this.beersService.getOffers$();
   }
 
 }
