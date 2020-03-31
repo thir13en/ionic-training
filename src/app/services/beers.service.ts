@@ -36,6 +36,7 @@ export class BeersService {
       artisan: true,
       imageUrl: 'https://cdn.shopify.com/s/files/1/1176/1532/products/Thumbnail-PDP-Brewdogpunk_1024x1024.jpg'
     }
+    // TODO: add a couple more offers
   ];
   private beers$: BehaviorSubject<Beer[]> = new BehaviorSubject<Beer[]>([...this.beers]);
   private offers$: BehaviorSubject<Beer[]> = new BehaviorSubject<Beer[]>([...this.offers]);
