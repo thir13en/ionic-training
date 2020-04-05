@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { OffersPageRoutingModule } from './offers-routing.module';
+import { BeersSharedModule } from '../beers-shared/beers-shared.module';
 
 import { OffersPage } from './offers.page';
 
@@ -14,7 +15,8 @@ import { OffersPage } from './offers.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    OffersPageRoutingModule
+    OffersPageRoutingModule,
+    BeersSharedModule,
   ],
   declarations: [OffersPage]
 })

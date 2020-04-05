@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { DiscoverPageRoutingModule } from './discover-routing.module';
+import { BeersSharedModule } from '../beers-shared/beers-shared.module';
 
 import { DiscoverPage } from './discover.page';
 
@@ -14,7 +15,8 @@ import { DiscoverPage } from './discover.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    DiscoverPageRoutingModule
+    DiscoverPageRoutingModule,
+    BeersSharedModule,
   ],
   declarations: [DiscoverPage],
 })
