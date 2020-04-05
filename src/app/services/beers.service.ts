@@ -43,8 +43,15 @@ export class BeersService {
       price: 1,
       homebrew: false,
       imageUrl: 'https://birrapedia.prevista.net/modulos/market/fc/f5/corona-extra--355--15775688333106-g.jpg'
+    },
+    {
+      id: '5',
+      name: 'Kozel Světlý',
+      description: 'An excellent beer from an excellent country when it comes to this beverage',
+      price: 2,
+      homebrew: false,
+      imageUrl: 'https://birrapedia.com/img/modulos/cerveza/5a4/kozel-sv-tly_15245918107247_t.jpg'
     }
-    // TODO: add a couple more offers
   ];
   private beers$: BehaviorSubject<Beer[]> = new BehaviorSubject<Beer[]>([...this.beers]);
   private offers$: BehaviorSubject<Beer[]> = new BehaviorSubject<Beer[]>([...this.offers]);
