@@ -4,5 +4,5 @@ export interface Beer {
     description: string;
     price: number;
     imageUrl: string;
-    artisan: boolean;
+    homebrew: boolean;
 }

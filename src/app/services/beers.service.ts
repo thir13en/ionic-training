@@ -16,7 +16,7 @@ export class BeersService {
       price: 2,
       description: 'The kabbaddhi of beers is arguably the best homebrewed beer openly commencialized',
       imageUrl: 'https://media.area-gourmet.com/c/product/cerveza-vic-brewery-mumbai-520x520.jpeg',
-      artisan: true
+      homebrew: true
     },
     {
       id: '2',
@@ -24,7 +24,7 @@ export class BeersService {
       price: 2.2,
       description: 'A wonder of homebrewed beers, it\'s IPA essence gives a the perfect flavour for a calmed gourmet afternoon',
       imageUrl: 'https://cdn.shopify.com/s/files/1/0137/9872/products/MONTSENY-IPA-_ampolla_grande.jpg?v=1422615773',
-      artisan: true
+      homebrew: true
     }
   ];
   private offers: Beer[] = [
@@ -33,8 +33,16 @@ export class BeersService {
       name: 'Brewdog',
       description: 'A Punk IPA that will trash your senses',
       price: 1.5,
-      artisan: true,
+      homebrew: true,
       imageUrl: 'https://cdn.shopify.com/s/files/1/1176/1532/products/Thumbnail-PDP-Brewdogpunk_1024x1024.jpg'
+    },
+    {
+      id: '4',
+      name: 'Corona',
+      description: 'THE mexican beer and novel devastating virus',
+      price: 1,
+      homebrew: false,
+      imageUrl: 'https://birrapedia.prevista.net/modulos/market/fc/f5/corona-extra--355--15775688333106-g.jpg'
     }
     // TODO: add a couple more offers
   ];
