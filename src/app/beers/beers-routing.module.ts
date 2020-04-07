@@ -35,9 +35,12 @@ const routes: Routes = [
           },
           {
             path: 'new',
-            loadChildren: () => import('./offers/new-offer/new-offer.module').then( m => m.NewOfferPageModule)
+            loadChildren: () => import('./offers/new-offer/new-offer.module').then( m => m.NewOfferPageModule),
           },
-            // TODO: add offer detail route
+          {
+            path: ':beerId',
+            loadChildren: () => import('./beers-detail/beers-detail.module').then( m => m.BeersDetailPageModule),
+          },
         ],
       },
     ],
