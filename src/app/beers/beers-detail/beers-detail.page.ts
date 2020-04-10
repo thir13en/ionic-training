@@ -23,6 +23,7 @@ export class BeersDetailPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    // TODO: add conditional render logic
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       if (paramMap.has('beerId')) {
         const beerId: string = paramMap.get('beerId') as string;
