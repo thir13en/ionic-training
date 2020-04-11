@@ -65,7 +65,8 @@ export class BeersService {
   }
 
   getBeer(beerId: string): Beer {
-    return { ...this.beers.find((beer: Beer) => beer.id === beerId) } as Beer;
+    const searchItems: Beer[] = [...this.beers, ...this.offers];
+    return { ...searchItems.find((beer: Beer) => beer.id === beerId) } as Beer;
   }
 
   deleteBeer(beerId: string): void {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 import { Beer } from '@core/interfaces';
@@ -23,7 +23,6 @@ export class BeersDetailPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    // TODO: add conditional render logic
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       if (paramMap.has('beerId')) {
         const beerId: string = paramMap.get('beerId') as string;
