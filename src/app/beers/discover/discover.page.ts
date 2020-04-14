@@ -12,7 +12,9 @@ export class DiscoverPage {
 
   beers$: Observable<Beer[]>;
 
-  constructor(private beersService: BeersService) { }
+  constructor(
+      private beersService: BeersService,
+  ) { }
 
   // ionic lifecycle hook
   ionViewWillEnter(): void {
