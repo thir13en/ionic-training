@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { AuthService } from '@app/auth/services/auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,15 +9,16 @@ import { AuthService } from '@app/auth/services/auth.service';
   templateUrl: './auth.page.html',
   styleUrls: ['./auth.page.scss'],
 })
-export class AuthPage implements OnInit {
+export class AuthPage {
 
-  constructor(private authService: AuthService) { }
-
-  ngOnInit() {
-  }
+  constructor(
+      private router: Router,
+      private authService: AuthService,
+  ) { }
 
   login() {
     this.authService.login();
+    this.router.navigateByUrl('/beers/tabs/discover');
   }
 
 }

@@ -4,6 +4,7 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AuthService } from '@app/auth/services/auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { AuthService } from '@app/auth/services/auth.service';
 })
 export class AppComponent {
   constructor(
+    private router: Router,
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
@@ -29,6 +31,7 @@ export class AppComponent {
 
   logout(): void {
     this.authService.logout();
+    this.router.navigateByUrl('/auth');
   }
 
 }
