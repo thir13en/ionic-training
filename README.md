@@ -1,5 +1,5 @@
 # IONIC TRAINING
-This is a repository to train with Ionic 5, following the a complete curse.
+This is a repository to train with Ionic 5, following the Ionic 5 w/ Angular curse.
 
 ## Prerequisites
 * `node` lts
