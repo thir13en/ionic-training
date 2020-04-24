@@ -8,6 +8,7 @@ import { DiscoverPageRoutingModule } from './discover-routing.module';
 import { BeersSharedModule } from '../beers-shared/beers-shared.module';
 
 import { DiscoverPage } from './discover.page';
+import { ModalExampleComponent } from './modal-example/modal-example.component';
 
 
 @NgModule({
@@ -18,6 +19,10 @@ import { DiscoverPage } from './discover.page';
     DiscoverPageRoutingModule,
     BeersSharedModule,
   ],
-  declarations: [DiscoverPage],
+  declarations: [
+    DiscoverPage,
+    ModalExampleComponent,
+  ],
+  entryComponents: [ModalExampleComponent],
 })
 export class DiscoverPageModule {}

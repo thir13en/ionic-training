@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { MenuController, ModalController } from '@ionic/angular';
 
 import { Observable } from 'rxjs';
 
 import { Beer } from '@core/interfaces';
 import { BeersService } from '@app/services';
+import { ModalExampleComponent } from './modal-example/modal-example.component';
+
 
 @Component({
   selector: 'app-discover',
@@ -17,6 +19,7 @@ export class DiscoverPage {
 
   constructor(
       private beersService: BeersService,
+      private modalCtr: ModalController,
       // private menuCtrl: MenuController,
   ) { }
 
@@ -28,6 +31,12 @@ export class DiscoverPage {
   // example of how to open a menu programmatically
   private openMenu(): void {
     // this.menuCtrl.open();
+  }
+
+  private openModal(): void {
+    this.modalCtr
+        .create({ component: ModalExampleComponent })
+        .then(modalEl => modalEl.present());
   }
 
 }
