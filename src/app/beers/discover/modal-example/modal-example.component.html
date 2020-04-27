@@ -1,9 +1,15 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>This is a Modal!!</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <h1>I am a cool modal</h1>
+  <h1>{{ dataInput }}</h1>
+  <ion-button color="primary" (click)="closeModal()">Close!</ion-button>
 </ion-content>

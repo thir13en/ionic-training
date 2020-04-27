@@ -39,10 +39,16 @@ export class DiscoverPage {
           component: ModalExampleComponent,
           // passing information to a modal
           componentProps: {
-            input: 'input',
+            dataInput: 'This is the data passed to the modals',
           }
         })
-        .then(modalEl => modalEl.present());
+        .then(modalEl => {
+            modalEl.present();
+            // necessary for retrieving data
+            return modalEl.onDidDismiss();
+        })
+        // retrieving the close modal data
+        .then(resultData => console.log(resultData.data, resultData.role));
   }
 
 }
