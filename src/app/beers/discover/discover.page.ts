@@ -35,7 +35,13 @@ export class DiscoverPage {
 
   private openModal(): void {
     this.modalCtr
-        .create({ component: ModalExampleComponent })
+        .create({
+          component: ModalExampleComponent,
+          // passing information to a modal
+          componentProps: {
+            input: 'input',
+          }
+        })
         .then(modalEl => modalEl.present());
   }
 
