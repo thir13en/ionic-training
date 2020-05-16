@@ -24,3 +24,6 @@ You can also use it as a plain wrapper for text elements:
     <h3>A subtitle</h3>
 </ìon-label>
 ```
+
+### How can you simply style some text?
+wrap it in `ion-text` and give it a color attribute!

@@ -15,4 +15,8 @@ export class BeerItemComponent implements OnInit {
 
   ngOnInit() {}
 
+  onEdit(offerId: string) {
+
+  }
+
 }
