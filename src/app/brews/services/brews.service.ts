@@ -1,9 +1,20 @@
 import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class BrewsService {
+import { BrewModel } from '@app/brews/models';
 
-  constructor() { }
+
+@Injectable()
+export class BrewsService {
+  private pBrews = [
+      new BrewModel(
+          '1',
+          '1',
+          ['yeast', 'sugar'],
+          'La Linda'
+      )
+  ];
+
+  get brews(): BrewModel[] {
+    return this.pBrews;
+  }
 }

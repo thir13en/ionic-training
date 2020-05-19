@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { BrewsPageRoutingModule } from './brews-routing.module';
 
 import { BrewsPage } from './brews.page';
+import { BrewsService } from './services/brews.service';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { BrewsPage } from './brews.page';
     IonicModule,
     BrewsPageRoutingModule
   ],
-  declarations: [BrewsPage]
+  declarations: [BrewsPage],
+  providers: [BrewsService],
 })
 export class BrewsPageModule {}
