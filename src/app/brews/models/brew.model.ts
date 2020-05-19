@@ -1,8 +1,8 @@
 export class BrewModel {
     constructor(
-        private id: string,
-        private brewerId: string,
-        private ingredients: string[],
-        private title: string
+        public id: string,
+        public brewerId: string,
+        public ingredients: string[],
+        public title: string
     ) {}
 }

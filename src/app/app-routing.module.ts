@@ -13,11 +13,13 @@ const routes: Routes = [
   {
     path: 'beers',
     loadChildren: () => import('./beers/beers.module').then( m => m.BeersPageModule),
-    canLoad: [AuthGuard]
+    // TODO: add AuthGuard
+    // canLoad: [AuthGuard]
   },
   {
     path: 'brews',
-    loadChildren: () => import('./brews/brews.module').then( m => m.BrewsPageModule)
+    loadChildren: () => import('./brews/brews.module').then( m => m.BrewsPageModule),
+    // canLoad: [AuthGuard]
   },
 ];
 
