@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { BrewsService } from './services/brews.service';
 import { BrewModel } from './models';
+import { IonItemSliding } from '@ionic/angular';
 
 
 @Component({
@@ -16,6 +17,11 @@ export class BrewsPage implements OnInit {
 
   ngOnInit() {
     this.loadedBrews = this.brewsService.brews;
+  }
+
+  onDeleteBrew(brewId: string, slidingEl: IonItemSliding) {
+    slidingEl.close();
+    // cancel brew logic
   }
 
 }
