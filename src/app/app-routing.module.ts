@@ -16,11 +16,6 @@ const routes: Routes = [
     // TODO: add AuthGuard
     // canLoad: [AuthGuard]
   },
-  {
-    path: 'brews',
-    loadChildren: () => import('./brews/brews.module').then( m => m.BrewsPageModule),
-    // canLoad: [AuthGuard]
-  },
 ];
 
 @NgModule({

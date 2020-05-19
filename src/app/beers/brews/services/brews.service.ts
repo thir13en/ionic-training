@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { BrewModel } from '@app/brews/models';
+import { BrewModel } from '@app/beers/brews/models';
 
 
 @Injectable()

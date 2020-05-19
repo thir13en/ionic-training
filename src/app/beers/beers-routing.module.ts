@@ -43,6 +43,11 @@ const routes: Routes = [
           },
         ],
       },
+      {
+        path: 'brews',
+        loadChildren: () => import('./brews/brews.module').then(m => m.BrewsPageModule),
+        // canLoad: [AuthGuard]
+      },
     ],
   },
 ];
