@@ -71,7 +71,7 @@ export class BeersService {
 
   deleteBeer(beerId: string): void {
     this.beers = this.beers.filter((beer: Beer): boolean => beer.id !== beerId);
-    this.beers$.next([...this.beers]);
+    this.beers$.next([...this.beers.slice()]);
   }
 
 }
