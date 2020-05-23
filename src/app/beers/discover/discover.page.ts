@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { MenuController, ModalController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 
 import { Observable } from 'rxjs';
 
 import { Beer } from '@core/interfaces';
 import { BeersService } from '@app/services';
 import { ModalExampleComponent } from './modal-example/modal-example.component';
+import { map } from 'rxjs/operators';
 
 
 @Component({
@@ -15,18 +16,22 @@ import { ModalExampleComponent } from './modal-example/modal-example.component';
 })
 export class DiscoverPage {
 
-  beers$: Observable<Beer[]>;
+    beers$: Observable<Beer[]>;
+    virtuallyScrolledBeers$: Observable<Beer[]>;
 
-  constructor(
+    constructor(
       private beersService: BeersService,
       private modalCtr: ModalController,
       // private menuCtrl: MenuController,
-  ) { }
+    ) { }
 
-  // ionic lifecycle hook
-  ionViewWillEnter(): void {
-    this.beers$ = this.beersService.getBeers$();
-  }
+    // ionic lifecycle hook
+    ionViewWillEnter(): void {
+        this.beers$ = this.beersService.getBeers$();
+        this.virtuallyScrolledBeers$ = this.beers$.pipe(
+            map(beers => beers.slice(1))
+        );
+    }
 
   // example of how to open a menu programmatically
   private openMenu(): void {
