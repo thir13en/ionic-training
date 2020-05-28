@@ -56,4 +56,8 @@ export class DiscoverPage {
         .then(resultData => console.log(resultData.data, resultData.role));
   }
 
+  onFilterUpdate(event: CustomEvent) {
+    console.log(event.detail);
+  }
+
 }
