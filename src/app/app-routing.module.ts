@@ -13,8 +13,7 @@ const routes: Routes = [
   {
     path: 'beers',
     loadChildren: () => import('./beers/beers.module').then( m => m.BeersPageModule),
-    // TODO: add AuthGuard
-    // canLoad: [AuthGuard]
+    canLoad: [AuthGuard]
   },
 ];
 

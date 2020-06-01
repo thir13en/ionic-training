@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { Beer } from '@core/interfaces';
 import { BeersService } from '@app/services';
 import { ModalExampleComponent } from './modal-example/modal-example.component';
-import { map } from 'rxjs/operators';
 
 
 @Component({

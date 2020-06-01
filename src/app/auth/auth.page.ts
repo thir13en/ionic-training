@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./auth.page.scss'],
 })
 export class AuthPage {
+  isLoading: boolean;
 
   constructor(
       private router: Router,
@@ -17,8 +18,12 @@ export class AuthPage {
   ) { }
 
   login() {
+    this.isLoading = true;
     this.authService.login();
-    this.router.navigateByUrl('/beers/tabs/discover');
+    setTimeout(() => {
+      this.isLoading = false;
+      this.router.navigateByUrl('/beers/tabs/discover');
+    }, 1300);
   }
 
 }
