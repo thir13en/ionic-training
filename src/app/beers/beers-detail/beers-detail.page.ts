@@ -1,10 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ActionSheetController, AlertController } from '@ionic/angular';
 
 import { Beer } from '@core/interfaces';
-import { BeersService } from '@app/services';
 import { ROUTES } from '@core/routing';
-import { AlertController } from '@ionic/angular';
+import { BeersService } from '@app/services';
 
 
 @Component({
@@ -20,6 +20,7 @@ export class BeersDetailPage implements OnInit {
     private beersService: BeersService,
     private router: Router,
     private alertController: AlertController,
+    private actionSheetCtrl: ActionSheetController,
   ) { }
 
   ngOnInit() {
@@ -51,6 +52,30 @@ export class BeersDetailPage implements OnInit {
     }).then(
         (alertEl: HTMLIonAlertElement): Promise<void> => alertEl.present(),
     );
+  }
+
+  onActionButtonClick() {
+    this.actionSheetCtrl.create({
+      header: 'Choose an action',
+      buttons: [
+        {
+          text: 'Select ingredients',
+          handler: () => this.openBeerModal('select'),
+        },
+        {
+          text: 'Random ingredients',
+          handler: () => this.openBeerModal('random'),
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel' // cancel of destructive
+        },
+      ],
+    }).then(actionSheetEl => actionSheetEl.present());
+  }
+
+  openBeerModal(mode: 'select' | 'random') {
+    alert(`Ỳou have selected ${mode} mode`);
   }
 
 }
