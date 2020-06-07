@@ -1,5 +1,8 @@
 # Glossary
 
+* Action Sheet Controller
+Modal with a list of options attached to their corresponding actions
+
 * Virtual Scrolling:
 An optimization that allows for only loading the items that are displayed 
 on the screen, specially useful for optimizing resources in really long lists.
