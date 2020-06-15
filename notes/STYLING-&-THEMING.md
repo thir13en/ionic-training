@@ -26,3 +26,12 @@ following classes:
     ...proceed
 }
 ```
+
+### Global component styling
+You can globally style components by selecting them in the global stylesheet and adding the custom 
+CSS variables that you can find related at the end of every component documentation:
+```css
+ion-button {
+    --background: blue;
+}
+```
