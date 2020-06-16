@@ -8,5 +8,17 @@
   <div class="ion-text-center">
     <ion-spinner *ngIf="isLoading" color="primary"></ion-spinner>
   </div>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <!-- defaults to text type -->
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button color="primary" fill="clear">Switch to login</ion-button>
   <ion-button *ngIf="!isLoading" color="primary" (click)="login()">Log in</ion-button>
 </ion-content>
