@@ -8,17 +8,28 @@
   <div class="ion-text-center">
     <ion-spinner *ngIf="isLoading" color="primary"></ion-spinner>
   </div>
-  <ion-list padding>
-    <ion-item>
-      <ion-label position="floating">Email</ion-label>
-      <!-- defaults to text type -->
-      <ion-input></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Password</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
-  </ion-list>
-  <ion-button color="primary" fill="clear">Switch to login</ion-button>
-  <ion-button *ngIf="!isLoading" color="primary" (click)="login()">Log in</ion-button>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3">
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <!-- defaults to text type -->
+            <ion-input type="email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3">
+        <!-- You can use expand (full, block...) to make the button take all space -->
+        <ion-button color="primary" fill="clear" expand="full">Switch to login</ion-button>
+        <ion-button *ngIf="!isLoading" color="primary" expand="block" (click)="login()">Log in</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

@@ -37,3 +37,17 @@ It is a performance optimization, when you have certain amount of items
 generated, no more are generated, you just reuse the already generated ones.  
 
 ![Virtual Scrolling](./img/Virtual%20Scrolling.png)
+
+### expand attribute
+To make buttons or elements take the full width.
+
+### `ion-grid` hierarchy
+```angular2html
+<ion-grid>
+    <ion-row>
+        <ion-col>
+          <!-- your stuff -->
+        </ion-col>
+    </ion-row>
+</ion-grid>
+```
