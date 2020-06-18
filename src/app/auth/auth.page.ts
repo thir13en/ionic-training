@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 
@@ -33,6 +34,10 @@ export class AuthPage {
       }, 1300);
     });
     this.authService.login();
+  }
+
+  onSubmit(form: NgForm) {
+
   }
 
 }
