@@ -14,3 +14,8 @@ Assigning the ngModel to a local template reference like this:
     required
 ></ion-input>
 ```
+
+### How to remove the underline that defaults in an ion-item under a from?
+```angular2html
+<ion-item lines="none"></ion-item>
+```

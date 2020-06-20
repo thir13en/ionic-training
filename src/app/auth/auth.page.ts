@@ -13,6 +13,7 @@ import { AuthService } from '@app/auth/services/auth.service';
 })
 export class AuthPage {
   isLoading: boolean;
+  isLoginMode = true;
 
   constructor(
       private router: Router,
@@ -34,6 +35,10 @@ export class AuthPage {
       }, 1300);
     });
     this.authService.login();
+  }
+
+  switchAuthMode() {
+    this.isLoginMode = !this.isLoginMode;
   }
 
   onSubmit(form: NgForm) {
