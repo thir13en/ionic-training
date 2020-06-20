@@ -42,7 +42,17 @@ export class AuthPage {
   }
 
   onSubmit(form: NgForm) {
+    if (form.valid) {
+      const email = form.value.email;
+      const password = form.value.password;
 
+      if (this.isLoginMode) {
+
+      } else {
+
+      }
+
+    }
   }
 
 }
