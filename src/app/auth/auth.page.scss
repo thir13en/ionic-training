@@ -1,0 +1,4 @@
+// set up the input invalid state styles, in this case for the label
+::ng-deep .ion-invalid.ion-touched ion-label {
+  color: (--ion-color-danger);
+}

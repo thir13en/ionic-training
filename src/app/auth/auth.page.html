@@ -17,12 +17,14 @@
               <ion-label position="floating">Email</ion-label>
               <!-- defaults to text type -->
               <ion-input
+                #emailCtrl="ngModel"
                 type="email"
                 ngModel
                 name="email"
                 email
                 required
               ></ion-input>
+              <p>Should be a valid email address</p>
             </ion-item>
             <ion-item>
               <ion-label position="floating">Password</ion-label>
