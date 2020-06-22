@@ -28,11 +28,11 @@ export class NewOfferPage implements OnInit {
       }),
       dateFrom: new FormControl(null, {
         updateOn: 'blur',
-        validators: [Validators.required, Validators.min(1)],
+        validators: [Validators.required],
       }),
       dateTo: new FormControl(null, {
         updateOn: 'blur',
-        validators: [Validators.required, Validators.min(1)],
+        validators: [Validators.required],
       }),
     });
   }
