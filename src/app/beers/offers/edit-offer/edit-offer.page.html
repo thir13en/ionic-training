@@ -1,5 +1,8 @@
-<ion-header>
+<ion-header *ngIf="(beer$ | async) as beer">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="'/beers/tabs/offers/' + beer.id"></ion-back-button>
+    </ion-buttons>
     <ion-title>edit-offer</ion-title>
   </ion-toolbar>
 </ion-header>
