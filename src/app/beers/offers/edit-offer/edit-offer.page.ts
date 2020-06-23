@@ -1,20 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { Beer } from '@core/interfaces';
 import { BeersService } from '@app/services';
-import { ActivatedRoute } from '@angular/router';
-import { map } from 'rxjs/operators';
-import { NavController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-edit-offer',
   templateUrl: './edit-offer.page.html',
   styleUrls: ['./edit-offer.page.scss'],
 })
-export class EditOfferPage {
+export class EditOfferPage implements OnInit {
 
+  // TODO: add path to reach this page
+  form: FormGroup;
   beers$: Observable<Beer[]>;
   beer$: Observable<Beer>;
 
@@ -24,7 +28,7 @@ export class EditOfferPage {
       private beersService: BeersService
   ) { }
 
-  ionViewWillEnter() {
+  ngOnInit() {
     this.beers$ = this.beersService.getOffers$();
 
     this.activatedRoute.paramMap.subscribe(paramMap => {
@@ -33,10 +37,25 @@ export class EditOfferPage {
         this.beer$ = this.beersService.getOffers$().pipe(
             map(beers => beers.filter(beer => beer.id === beerId)[0]),
         );
+        this.beer$.subscribe(beer => {
+          this.form = new FormGroup({
+            title: new FormControl(beer.name, {
+              updateOn: 'blur',
+              validators: [Validators.required],
+            }),
+            description: new FormControl(beer.description, {
+              updateOn: 'blur',
+              validators: [Validators.required, Validators.maxLength(180)],
+            }),
+          });
+        });
       } else {
         this.navCtrl.navigateBack('/beers/tabs/offers/');
       }
     });
   }
 
+  editOffer() {
+    console.log(this.form);
+  }
 }
