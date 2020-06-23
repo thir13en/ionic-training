@@ -38,7 +38,7 @@ export class NewOfferPage implements OnInit {
   }
 
   createOffer() {
-    console.log('creating beer offer');
+    console.log(this.form);
   }
 
 }
