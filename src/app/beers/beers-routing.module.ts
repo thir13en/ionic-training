@@ -50,6 +50,10 @@ const routes: Routes = [
       },
     ],
   },
+  {
+    path: 'set-ingredients',
+    loadChildren: () => import('./set-ingredients/set-ingredients.module').then( m => m.SetIngredientsPageModule)
+  },
 ];
 
 @NgModule({
