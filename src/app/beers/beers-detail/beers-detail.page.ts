@@ -75,7 +75,7 @@ export class BeersDetailPage implements OnInit {
   }
 
   openBeerModal(mode: 'select' | 'random') {
-    alert(`Ỳou have selected ${mode} mode`);
+    this.router.navigate([ROUTES.BEERS, ROUTES.SET_INGREDIENTS]);
   }
 
 }
