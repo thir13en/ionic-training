@@ -21,10 +21,6 @@ const routes: Routes = [
             loadChildren: () => import('./discover/discover.module').then(m => m.DiscoverPageModule),
           },
           {
-            path: 'set-ingredients',
-            loadChildren: () => import('./set-ingredients/set-ingredients.module').then( m => m.SetIngredientsPageModule)
-          },
-          {
             path: ':beerId',
             loadChildren: () => import('./beers-detail/beers-detail.module').then( m => m.BeersDetailPageModule)
           },
@@ -46,6 +42,10 @@ const routes: Routes = [
             loadChildren: () => import('./beers-detail/beers-detail.module').then( m => m.BeersDetailPageModule),
           },
         ],
+      },
+      {
+        path: 'set-ingredients',
+        loadChildren: () => import('./set-ingredients/set-ingredients.module').then( m => m.SetIngredientsPageModule)
       },
       {
         path: 'brews',
