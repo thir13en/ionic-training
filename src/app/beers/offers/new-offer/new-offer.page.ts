@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { BeersService } from '@app/services';
+
 
 @Component({
   selector: 'app-new-offer',
@@ -9,7 +13,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class NewOfferPage implements OnInit {
   form: FormGroup;
 
-  constructor() { }
+  constructor(
+      private router: Router,
+      private beersService: BeersService
+  ) { }
 
   ngOnInit() {
     // NOTE: alternative to use a reactive form without the form builder
@@ -30,7 +37,7 @@ export class NewOfferPage implements OnInit {
         updateOn: 'blur',
         validators: [Validators.required],
       }),
-      homebrewed: new FormControl(null, {
+      homebrewed: new FormControl(false, {
         updateOn: 'blur',
       }),
       dateFrom: new FormControl(null, {
@@ -45,7 +52,15 @@ export class NewOfferPage implements OnInit {
   }
 
   createOffer() {
-    console.log(this.form);
+    this.beersService.addOffer({
+      name: this.form.value.name,
+      description: this.form.value.description,
+      price: +this.form.value.price,
+      homebrew: this.form.value.homebrew,
+      imageUrl: this.form.value.imgUrl,
+    });
+
+    this.router.navigate(['beers', 'tabs', 'offers']);
   }
 
 }

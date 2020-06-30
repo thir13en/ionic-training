@@ -89,6 +89,7 @@ export class BeersService {
       ownerId: this.authService.userId,
       id: this.offers.length + 1 + '',
     });
+    this.offers$.next(this.offers);
   }
 
   deleteBeer(beerId: string): void {
