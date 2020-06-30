@@ -14,7 +14,7 @@ export class NewOfferPage implements OnInit {
   ngOnInit() {
     // NOTE: alternative to use a reactive form without the form builder
     this.form = new FormGroup({
-      title: new FormControl(null, {
+      name: new FormControl(null, {
         updateOn: 'blur',
         validators: [Validators.required],
       }),
@@ -25,6 +25,13 @@ export class NewOfferPage implements OnInit {
       price: new FormControl(null, {
         updateOn: 'blur',
         validators: [Validators.required, Validators.min(1)],
+      }),
+      imgUrl: new FormControl(null, {
+        updateOn: 'blur',
+        validators: [Validators.required],
+      }),
+      homebrewed: new FormControl(null, {
+        updateOn: 'blur',
       }),
       dateFrom: new FormControl(null, {
         updateOn: 'blur',

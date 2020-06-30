@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 import { Beer } from '@core/interfaces';
+import { AuthService } from '@app/auth/services/auth.service';
 
 
 @Injectable({
@@ -11,6 +12,7 @@ import { Beer } from '@core/interfaces';
 export class BeersService {
   private beers: Beer[] = [
     {
+      ownerId: 'abc',
       id: '1',
       name: 'Mumbai',
       price: 2,
@@ -19,6 +21,7 @@ export class BeersService {
       homebrew: true
     },
     {
+      ownerId: 'abc',
       id: '2',
       name: 'Montseny',
       price: 2.2,
@@ -29,6 +32,7 @@ export class BeersService {
   ];
   private offers: Beer[] = [
     {
+      ownerId: 'abc',
       id: '3',
       name: 'Brewdog',
       description: 'A Punk IPA that will trash your senses',
@@ -37,6 +41,7 @@ export class BeersService {
       imageUrl: 'https://cdn.shopify.com/s/files/1/1176/1532/products/Thumbnail-PDP-Brewdogpunk_1024x1024.jpg'
     },
     {
+      ownerId: 'abc',
       id: '4',
       name: 'Corona',
       description: 'THE mexican beer and novel devastating virus',
@@ -45,6 +50,7 @@ export class BeersService {
       imageUrl: 'https://birrapedia.prevista.net/modulos/market/fc/f5/corona-extra--355--15775688333106-g.jpg'
     },
     {
+      ownerId: 'abc',
       id: '5',
       name: 'Kozel Světlý',
       description: 'An excellent beer from an excellent country when it comes to this beverage',
@@ -55,6 +61,8 @@ export class BeersService {
   ];
   private beers$: BehaviorSubject<Beer[]> = new BehaviorSubject<Beer[]>([...this.beers]);
   private offers$: BehaviorSubject<Beer[]> = new BehaviorSubject<Beer[]>([...this.offers]);
+
+  constructor(private authService: AuthService) {}
 
   getBeers$(): Observable<Beer[]> {
     return this.beers$.asObservable();
@@ -67,6 +75,20 @@ export class BeersService {
   getBeer(beerId: string): Beer {
     const searchItems: Beer[] = [...this.beers, ...this.offers];
     return { ...searchItems.find((beer: Beer) => beer.id === beerId) } as Beer;
+  }
+
+  addOffer(newBeer: {
+    name: string,
+    description: string,
+    price: number,
+    imageUrl: string,
+    homebrew: boolean,
+  }): void {
+    this.offers.push({
+      ...newBeer,
+      ownerId: this.authService.userId,
+      id: this.offers.length + 1 + '',
+    });
   }
 
   deleteBeer(beerId: string): void {

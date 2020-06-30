@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   private userLoggedIn = false;
+  readonly userId = 'abc';
 
-  constructor() { }
+  get isUserLoggedIn(): boolean {
+    return this.userLoggedIn;
+  }
 
   login(): void {
     this.userLoggedIn = true;
@@ -14,10 +18,6 @@ export class AuthService {
 
   logout(): void {
     this.userLoggedIn = false;
-  }
-
-  isUserLoggedIn(): boolean {
-    return this.userLoggedIn;
   }
 
 }
