@@ -59,8 +59,8 @@ export class BeersService {
       imageUrl: 'https://birrapedia.com/img/modulos/cerveza/5a4/kozel-sv-tly_15245918107247_t.jpg'
     }
   ];
-  private beers$: BehaviorSubject<Beer[]> = new BehaviorSubject<Beer[]>([...this.beers]);
-  private offers$: BehaviorSubject<Beer[]> = new BehaviorSubject<Beer[]>([...this.offers]);
+  private beers$ = new BehaviorSubject<Beer[]>([...this.beers]);
+  private offers$ = new BehaviorSubject<Beer[]>([...this.offers]);
 
   constructor(private authService: AuthService) {}
 
