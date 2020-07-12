@@ -51,3 +51,6 @@ To make buttons or elements take the full width.
     </ion-row>
 </ion-grid>
 ```
+
+### Modal Creation
+In `Ionic`, we can create and manage modals with the `ModalController` and the `ActionSheetController` services.
