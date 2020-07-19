@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
 import { Beer } from '@core/interfaces';
 import { AuthService } from '@app/auth/services/auth.service';
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -62,7 +63,10 @@ export class BeersService {
   private beers$ = new BehaviorSubject<Beer[]>([...this.beers]);
   private offers$ = new BehaviorSubject<Beer[]>([...this.offers]);
 
-  constructor(private authService: AuthService) {}
+  constructor(
+      private http: HttpClient,
+      private authService: AuthService,
+  ) {}
 
   getBeers$(): Observable<Beer[]> {
     return this.beers$.asObservable();
@@ -83,13 +87,13 @@ export class BeersService {
     price: number,
     imageUrl: string,
     homebrew: boolean,
-  }): void {
+  }): Observable<any> {
     this.offers.push({
       ...newBeer,
       ownerId: this.authService.userId,
       id: this.offers.length + 1 + '',
     });
-    this.offers$.next(this.offers);
+    return this.http.post('https://umy-ionic-angular.firebaseio.com/offered-beers.json', { ...newBeer, ownerId: this.authService.userId });
   }
 
   deleteBeer(beerId: string): void {

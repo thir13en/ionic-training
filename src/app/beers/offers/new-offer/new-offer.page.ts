@@ -58,9 +58,9 @@ export class NewOfferPage implements OnInit {
       price: +this.form.value.price,
       homebrew: this.form.value.homebrew,
       imageUrl: this.form.value.imgUrl,
+    }).subscribe(createdBeer => {
+      console.log(createdBeer);
+      this.router.navigate(['beers', 'tabs', 'offers']);
     });
-
-    this.router.navigate(['beers', 'tabs', 'offers']);
   }
-
 }
