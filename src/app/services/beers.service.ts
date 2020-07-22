@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { BehaviorSubject, Observable } from 'rxjs';
+import { switchMap, tap } from 'rxjs/operators';
 
 import { Beer } from '@core/interfaces';
 import { AuthService } from '@app/auth/services/auth.service';
@@ -88,12 +89,21 @@ export class BeersService {
     imageUrl: string,
     homebrew: boolean,
   }): Observable<any> {
-    this.offers.push({
-      ...newBeer,
-      ownerId: this.authService.userId,
-      id: this.offers.length + 1 + '',
-    });
-    return this.http.post('https://umy-ionic-angular.firebaseio.com/offered-beers.json', { ...newBeer, ownerId: this.authService.userId });
+    return this.http.post<{ name: string }>(
+        'https://umy-ionic-angular.firebaseio.com/offered-beers.json',
+        { ...newBeer, ownerId: this.authService.userId }
+      ).pipe(
+        tap(resData => {
+          const beerToAdd: Beer = {
+            ...newBeer,
+            id: resData.name,
+            ownerId: this.authService.userId,
+          };
+          this.offers.push(beerToAdd);
+          this.offers$.next(this.offers.slice());
+        }),
+        switchMap(_ => this.offers),
+      );
   }
 
   deleteBeer(beerId: string): void {
