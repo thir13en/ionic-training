@@ -77,6 +77,10 @@ export class BeersService {
     return this.offers$.asObservable();
   }
 
+  fetchOffers(): void {
+    this.http.get('https://umy-ionic-angular.firebaseio.com/offered-beers.json');
+  }
+
   getBeer(beerId: string): Beer {
     const searchItems: Beer[] = [...this.beers, ...this.offers];
     return { ...searchItems.find((beer: Beer) => beer.id === beerId) } as Beer;
@@ -93,7 +97,7 @@ export class BeersService {
         'https://umy-ionic-angular.firebaseio.com/offered-beers.json',
         { ...newBeer, ownerId: this.authService.userId }
       ).pipe(
-        tap(resData => {
+        tap((resData: { name: string }) => {
           const beerToAdd: Beer = {
             ...newBeer,
             id: resData.name,
@@ -102,7 +106,7 @@ export class BeersService {
           this.offers.push(beerToAdd);
           this.offers$.next(this.offers.slice());
         }),
-        switchMap(_ => this.offers),
+        switchMap(() => this.offers),
       );
   }
 
