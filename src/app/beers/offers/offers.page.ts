@@ -18,6 +18,7 @@ export class OffersPage {
 
   ionViewWillEnter() {
     this.beers$ = this.beersService.getOffers$();
+    this.beersService.fetchOffers().subscribe();
   }
 
 }

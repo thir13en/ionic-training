@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 import { BehaviorSubject, Observable } from 'rxjs';
-import { switchMap, tap } from 'rxjs/operators';
+import { map, switchMap, tap } from 'rxjs/operators';
 
 import { Beer } from '@core/interfaces';
 import { AuthService } from '@app/auth/services/auth.service';
-import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -77,8 +77,14 @@ export class BeersService {
     return this.offers$.asObservable();
   }
 
-  fetchOffers(): void {
-    this.http.get('https://umy-ionic-angular.firebaseio.com/offered-beers.json');
+  fetchOffers(): Observable<any> {
+    return this.http.get<Beer>('https://umy-ionic-angular.firebaseio.com/offered-beers.json').pipe(
+        map(res => {
+          return {
+            // TODO: create interface for response object
+          }
+        }),
+    );
   }
 
   getBeer(beerId: string): Beer {
