@@ -79,6 +79,7 @@ export class BeersService {
 
   fetchOffers(): Observable<any> {
     return this.http.get<Beer>('https://umy-ionic-angular.firebaseio.com/offered-beers.json').pipe(
+        tap(console.log),
         map(res => {
           return {
             // TODO: create interface for response object
