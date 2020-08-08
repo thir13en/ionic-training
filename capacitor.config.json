@@ -1,8 +1,13 @@
 {
   "appId": "io.ionic.starter",
-  "appName": "ionic-angular-course",
+  "appName": "ionic-training",
   "bundledWebRuntime": false,
-  "linuxAndroidStudioPath": "/home/santiloopz/.local/share/JetBrains/Toolbox/apps/AndroidStudio/ch-0/191.6010548/bin/studio.sh",
   "npmClient": "npm",
-  "webDir": "www"
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
 }

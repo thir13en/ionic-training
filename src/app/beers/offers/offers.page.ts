@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 import { Beer } from '@core/interfaces';
 import { BeersService } from '@app/services';
+import {tap} from "rxjs/operators";
 
 @Component({
   selector: 'app-offers',
