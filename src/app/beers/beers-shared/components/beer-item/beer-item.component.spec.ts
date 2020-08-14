@@ -1,7 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
+import { TestingModule } from '@testing/testing.module';
 import { BeerItemComponent } from './beer-item.component';
+
 
 describe('BeerItemComponent', () => {
   let component: BeerItemComponent;
@@ -9,8 +11,11 @@ describe('BeerItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BeerItemComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [
+          TestingModule,
+          IonicModule.forRoot(),
+      ],
+      declarations: [BeerItemComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(BeerItemComponent);
