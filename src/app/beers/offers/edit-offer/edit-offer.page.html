@@ -1,44 +1,44 @@
-<!--<ion-header *ngIf="(beer$ | async) as beer">-->
-<!--  <ion-toolbar>-->
-<!--    <ion-buttons slot="start">-->
-<!--      <ion-back-button [defaultHref]="'/beers/tabs/offers/' + beer.id"></ion-back-button>-->
-<!--    </ion-buttons>-->
-<!--    <ion-title>edit-offer</ion-title>-->
-<!--    <ion-buttons slot="primary">-->
-<!--      <ion-button (click)="editOffer()" [disabled]="form.invalid">-->
-<!--        <ion-icon name="checkmark" slot="icon-only"></ion-icon>-->
-<!--      </ion-button>-->
-<!--    </ion-buttons>-->
-<!--  </ion-toolbar>-->
-<!--</ion-header>-->
+<ion-header *ngIf="(beer$ | async) as beer">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="'/beers/tabs/offers/' + beer.id"></ion-back-button>
+    </ion-buttons>
+    <ion-title>edit-offer</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="editOffer()" [disabled]="form.invalid">
+        <ion-icon name="checkmark" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
-<!--<ion-content>-->
-<!--  <form [formGroup]="form">-->
-<!--    <ion-grid>-->
-<!--      <ion-row>-->
-<!--        <ion-col size-sm="6" offset-sm="3">-->
-<!--          <ion-item>-->
-<!--            &lt;!&ndash; NOTE: this is how you make the label float above the input &ndash;&gt;-->
-<!--            <ion-label position="floating">Title</ion-label>-->
-<!--            &lt;!&ndash; NOTE: here's how to enable autocompletion and autocorrecton-->
-<!--                        specially useful on mobile devices &ndash;&gt;-->
-<!--            <ion-input type="text" autocomplete autocorrect formControlName="title"></ion-input>-->
-<!--          </ion-item>-->
-<!--        </ion-col>-->
-<!--      </ion-row>-->
-<!--      <ion-row>-->
-<!--        <ion-col size-sm="6" offset-sm="3">-->
-<!--          <ion-item>-->
-<!--            <ion-label position="floating">Short description</ion-label>-->
-<!--            <ion-textarea rows="3" formControlName="description"></ion-textarea>-->
-<!--          </ion-item>-->
-<!--        </ion-col>-->
-<!--      </ion-row>-->
-<!--      <ion-row *ngIf="form.get('description').invalid && form.get('description').touched">-->
-<!--        <ion-col size-sm="6" offset-sm="3">-->
-<!--          <p>Add a description shorter than 180 characters</p>-->
-<!--        </ion-col>-->
-<!--      </ion-row>-->
-<!--    </ion-grid>-->
-<!--  </form>-->
-<!--</ion-content>-->
+<ion-content>
+  <form [formGroup]="form">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <!-- NOTE: this is how you make the label float above the input -->
+            <ion-label position="floating">Title</ion-label>
+            <!-- NOTE: here's how to enable autocompletion and autocorrecton
+                        specially useful on mobile devices -->
+            <ion-input type="text" autocomplete autocorrect formControlName="title"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Short description</ion-label>
+            <ion-textarea rows="3" formControlName="description"></ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="form.get('description').invalid && form.get('description').touched">
+        <ion-col size-sm="6" offset-sm="3">
+          <p>Add a description shorter than 180 characters</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
