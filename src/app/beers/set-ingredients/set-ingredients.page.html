@@ -12,7 +12,7 @@
           <ion-item>
             <ion-label position="floating">Select example</ion-label>
             <!-- NOTES: binding to a value is the best way to make a pre-selected value. -->
-            <ion-select name="select-example" [ngModel]="2">
+            <ion-select name="select-example" id="select-example" [ngModel]="2">
               <ion-select-option value="1">1</ion-select-option>
               <ion-select-option value="2">2</ion-select-option>
               <ion-select-option value="3">3</ion-select-option>
@@ -25,6 +25,8 @@
           <ion-item>
             <!-- some more advance usage of datetime-->
             <ion-datetime
+              id="datetime"
+              name="datetime"
               ngModel
               display-format="MMM DD YYYY"
               picker-format="MM DD YY"
