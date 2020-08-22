@@ -33,7 +33,6 @@ export class EditOfferPage implements OnInit {
 
     this.activatedRoute.paramMap.subscribe(paramMap => {
       // mock this for test to be successful
-      debugger;
       const beerId = paramMap.get('beerId');
       if (beerId) {
         this.beer$ = this.beersService.getOffers$().pipe(

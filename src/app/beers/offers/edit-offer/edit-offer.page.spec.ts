@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { EMPTY, of } from 'rxjs';
+import { Observable, of as observableOf } from 'rxjs';
 
-import { BeersService } from '@app/services';
 import { TestingModule } from '@testing/testing.module';
 import { NoopComponent } from '@testing/mocks';
 import { EditOfferPage } from './edit-offer.page';
 
 
-fdescribe('EditOfferPage', () => {
+describe('EditOfferPage', () => {
   let component: EditOfferPage;
   let fixture: ComponentFixture<EditOfferPage>;
+  let activatedRoute: ActivatedRoute;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -31,6 +31,7 @@ fdescribe('EditOfferPage', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(EditOfferPage);
     component = fixture.componentInstance;
+    activatedRoute = TestBed.inject(ActivatedRoute);
     fixture.detectChanges();
   });
 
