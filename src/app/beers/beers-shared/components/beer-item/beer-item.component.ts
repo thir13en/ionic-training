@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonItemSliding } from '@ionic/angular';
 
@@ -10,12 +10,10 @@ import { Beer } from '@core/interfaces';
   templateUrl: './beer-item.component.html',
   styleUrls: ['./beer-item.component.scss'],
 })
-export class BeerItemComponent implements OnInit {
+export class BeerItemComponent {
   @Input() beer: Beer;
 
   constructor(private router: Router) { }
-
-  ngOnInit() {}
 
   onEdit(offerId: string, slidingItem: IonItemSliding) {
     slidingItem.close();

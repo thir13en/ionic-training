@@ -3,6 +3,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { TestingModule } from '@testing/testing.module';
 import { BeerItemComponent } from './beer-item.component';
+import { MOCK_BEER } from '@testing/mocks';
 
 
 describe('BeerItemComponent', () => {
@@ -20,6 +21,7 @@ describe('BeerItemComponent', () => {
 
     fixture = TestBed.createComponent(BeerItemComponent);
     component = fixture.componentInstance;
+    component.beer = MOCK_BEER;
     fixture.detectChanges();
   }));
 
