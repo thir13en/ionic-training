@@ -32,6 +32,7 @@ export class EditOfferPage implements OnInit {
     this.beers$ = this.beersService.getOffers$();
 
     this.activatedRoute.paramMap.subscribe(paramMap => {
+      // mock this for test to be successful
       const beerId = paramMap.get('beerId');
       if (beerId) {
         this.beer$ = this.beersService.getOffers$().pipe(
@@ -58,4 +59,5 @@ export class EditOfferPage implements OnInit {
   editOffer() {
     console.log(this.form);
   }
+
 }

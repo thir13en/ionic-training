@@ -19,7 +19,8 @@
     "importHelpers": true,
     "paths": {
       "@app/*": ["src/app/*"],
-      "@core/*": ["src/app/core/*"]
+      "@core/*": ["src/app/core/*"],
+      "@testing/*": ["src/app/testing/*"]
     }
   },
   "angularCompilerOptions": {
