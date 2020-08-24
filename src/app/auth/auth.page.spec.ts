@@ -13,7 +13,7 @@ describe('AuthPage', () => {
     TestBed.configureTestingModule({
       imports: [
           TestingModule,
-          IonicModule.forRoot(),
+          IonicModule,
       ],
       declarations: [AuthPage],
     }).compileComponents();

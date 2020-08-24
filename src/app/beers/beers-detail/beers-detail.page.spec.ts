@@ -12,8 +12,8 @@ describe('BeersDetailPage', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        IonicModule.forRoot(),
         TestingModule,
+        IonicModule,
       ],
       declarations: [BeersDetailPage]
     }).compileComponents();
