@@ -59,8 +59,8 @@ export class NewOfferPage implements OnInit {
       homebrew: this.form.value.homebrew,
       imageUrl: this.form.value.imgUrl,
     }).subscribe(createdBeer => {
-      console.log(createdBeer);
-      this.router.navigate(['beers', 'tabs', 'offers']);
+      // TODO: uncomment
+      // this.router.navigate(['beers', 'tabs', 'offers']);
     });
   }
 }

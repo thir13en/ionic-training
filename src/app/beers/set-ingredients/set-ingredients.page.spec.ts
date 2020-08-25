@@ -13,7 +13,7 @@ describe('SetIngredientsPage', () => {
     TestBed.configureTestingModule({
       imports: [
         TestingModule,
-        IonicModule.forRoot(),
+        IonicModule,
       ],
       declarations: [SetIngredientsPage],
     }).compileComponents();

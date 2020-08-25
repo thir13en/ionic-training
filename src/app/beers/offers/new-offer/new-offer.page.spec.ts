@@ -13,7 +13,7 @@ describe('NewOfferPage', () => {
     TestBed.configureTestingModule({
       imports: [
           TestingModule,
-          IonicModule.forRoot(),
+          IonicModule,
       ],
       declarations: [NewOfferPage],
     }).compileComponents();

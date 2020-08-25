@@ -14,7 +14,7 @@ describe('BeerItemComponent', () => {
     TestBed.configureTestingModule({
       imports: [
           TestingModule,
-          IonicModule.forRoot(),
+          IonicModule,
       ],
       declarations: [BeerItemComponent],
     }).compileComponents();

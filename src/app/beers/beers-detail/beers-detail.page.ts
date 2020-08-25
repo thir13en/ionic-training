@@ -30,7 +30,8 @@ export class BeersDetailPage implements OnInit {
 
         this.beer = this.beersService.getBeer(beerId);
       } else {
-        this.router.navigate([ROUTES.BEERS]);
+        // TODO: uncomment
+        // this.router.navigate([ROUTES.BEERS]);
       }
     });
   }
@@ -46,7 +47,8 @@ export class BeersDetailPage implements OnInit {
         text: 'Delete',
         handler: (): void => {
           this.beersService.deleteBeer(this.beer.id);
-          this.router.navigate([ROUTES.BEERS]);
+          // TODO: uncomment
+          // this.router.navigate([ROUTES.BEERS]);
         }
       }],
     }).then(
@@ -76,7 +78,8 @@ export class BeersDetailPage implements OnInit {
 
   openBeerModal(mode: 'select' | 'random') {
     if (mode === 'select') {
-      this.router.navigate([ROUTES.BEERS, ROUTES.TABS, ROUTES.SET_INGREDIENTS]);
+      // TODO: uncomment
+      // this.router.navigate([ROUTES.BEERS, ROUTES.TABS, ROUTES.SET_INGREDIENTS]);
     } else {
       console.log(mode);
     }

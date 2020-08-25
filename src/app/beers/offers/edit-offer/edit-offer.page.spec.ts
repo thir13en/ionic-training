@@ -22,7 +22,7 @@ describe('EditOfferPage', () => {
         RouterTestingModule.withRoutes([
           { path: 'beers/tabs/offers/', component: NoopComponent }
         ]),
-        IonicModule.forRoot(),
+        IonicModule,
       ],
       declarations: [EditOfferPage],
     }).compileComponents();
