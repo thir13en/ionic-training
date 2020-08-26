@@ -17,8 +17,7 @@ export class BeerItemComponent {
 
   onEdit(offerId: string, slidingItem: IonItemSliding) {
     slidingItem.close();
-    // TODO: uncomment
-    // this.router.navigate(['beers', 'tabs', 'offers', 'edit', offerId]);
+    this.router.navigateByUrl(`beers/tabs/offers/edit/${offerId}`);
   }
 
 }

@@ -30,8 +30,7 @@ export class BeersDetailPage implements OnInit {
 
         this.beer = this.beersService.getBeer(beerId);
       } else {
-        // TODO: uncomment
-        // this.router.navigate([ROUTES.BEERS]);
+        this.router.navigate([ROUTES.BEERS]);
       }
     });
   }
