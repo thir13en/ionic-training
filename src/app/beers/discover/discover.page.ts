@@ -38,7 +38,7 @@ export class DiscoverPage {
     // this.menuCtrl.open();
   }
 
-  private openModal(): void {
+  openModal(): void {
     this.modalCtr
         .create({
           component: ModalExampleComponent,

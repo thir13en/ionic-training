@@ -46,8 +46,7 @@ export class BeersDetailPage implements OnInit {
         text: 'Delete',
         handler: (): void => {
           this.beersService.deleteBeer(this.beer.id);
-          // TODO: uncomment
-          // this.router.navigate([ROUTES.BEERS]);
+          this.router.navigate([ROUTES.BEERS]);
         }
       }],
     }).then(
@@ -77,8 +76,7 @@ export class BeersDetailPage implements OnInit {
 
   openBeerModal(mode: 'select' | 'random') {
     if (mode === 'select') {
-      // TODO: uncomment
-      // this.router.navigate([ROUTES.BEERS, ROUTES.TABS, ROUTES.SET_INGREDIENTS]);
+      this.router.navigate([ROUTES.BEERS, ROUTES.TABS, ROUTES.SET_INGREDIENTS]);
     } else {
       console.log(mode);
     }

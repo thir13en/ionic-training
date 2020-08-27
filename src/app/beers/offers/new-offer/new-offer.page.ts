@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { BeersService } from '@app/services';
+import { ROUTES } from '@core/routing';
 
 
 @Component({
@@ -59,8 +60,7 @@ export class NewOfferPage implements OnInit {
       homebrew: this.form.value.homebrew,
       imageUrl: this.form.value.imgUrl,
     }).subscribe(createdBeer => {
-      // TODO: uncomment
-      // this.router.navigate(['beers', 'tabs', 'offers']);
+      this.router.navigate([ROUTES.BEERS, ROUTES.TABS, ROUTES.OFFERS]);
     });
   }
 }
