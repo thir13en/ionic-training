@@ -3,7 +3,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { TestingModule } from '@testing/testing.module';
 import { BeerItemComponent } from './beer-item.component';
-import { MOCK_BEER } from '@testing/mocks';
+import { MOCK_BEER, NoopComponent } from '@testing/mocks';
+import { RouterTestingModule } from '@angular/router/testing';
 
 
 describe('BeerItemComponent', () => {
@@ -14,7 +15,10 @@ describe('BeerItemComponent', () => {
     TestBed.configureTestingModule({
       imports: [
           TestingModule,
-          IonicModule.forRoot(),
+        RouterTestingModule.withRoutes([
+          { path: 'beers/tabs/offers/edit/:id', component: NoopComponent }
+        ]),
+          IonicModule,
       ],
       declarations: [BeerItemComponent],
     }).compileComponents();

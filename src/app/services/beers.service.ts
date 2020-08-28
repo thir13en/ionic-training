@@ -83,7 +83,7 @@ export class BeersService {
         map(res => {
           return {
             // TODO: create interface for response object
-          }
+          };
         }),
     );
   }

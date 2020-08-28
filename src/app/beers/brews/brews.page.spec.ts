@@ -14,7 +14,7 @@ describe('BrewsPage', () => {
     TestBed.configureTestingModule({
       imports: [
         TestingModule,
-        IonicModule.forRoot(),
+        IonicModule,
       ],
       declarations: [BrewsPage],
       providers: [BrewsService],
