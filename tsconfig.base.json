@@ -20,6 +20,7 @@
     "paths": {
       "@app/*": ["src/app/*"],
       "@core/*": ["src/app/core/*"],
+      "@shared/*": ["src/app/shared/*"],
       "@testing/*": ["src/app/testing/*"]
     }
   },

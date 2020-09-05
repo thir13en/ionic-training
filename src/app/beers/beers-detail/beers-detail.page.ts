@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ActionSheetController, AlertController } from '@ionic/angular';
 
-import { Beer } from '@core/interfaces';
+import { Beer } from '@core/../../shared/models/interfaces';
 import { ROUTES } from '@core/routing';
 import { BeersService } from '@app/services';
 

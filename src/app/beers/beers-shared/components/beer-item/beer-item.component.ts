@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonItemSliding } from '@ionic/angular';
 
-import { Beer } from '@core/interfaces';
+import { Beer } from '@core/../../../../shared/models/interfaces';
 
 
 @Component({

@@ -1,0 +1,1 @@
+export { BeerOffer } from './beerOffer';

@@ -4,9 +4,18 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map, switchMap, tap } from 'rxjs/operators';
 
-import { Beer } from '@core/interfaces';
+import { Beer } from '@core/../shared/models/interfaces';
 import { AuthService } from '@app/auth/services/auth.service';
+import { BeerOffer } from '@app/shared/models/beer-offer';
 
+
+interface ResBeer {
+  ownerId: string;
+  name: string;
+  price: number;
+  imageUrl: string;
+  description: string;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -40,7 +49,7 @@ export class BeersService {
       description: 'A Punk IPA that will trash your senses',
       price: 1.5,
       homebrew: true,
-      imageUrl: 'https://cdn.shopify.com/s/files/1/1176/1532/products/Thumbnail-PDP-Brewdogpunk_1024x1024.jpg'
+      imageUrl: 'https://www.beerhawk.co.uk/media/catalog/product/b/r/brewdog_punkipa_2.jpg'
     },
     {
       ownerId: 'abc',
@@ -77,14 +86,12 @@ export class BeersService {
     return this.offers$.asObservable();
   }
 
-  fetchOffers(): Observable<any> {
-    return this.http.get<Beer>('https://umy-ionic-angular.firebaseio.com/offered-beers.json').pipe(
-        tap(console.log),
-        map(res => {
-          return {
-            // TODO: create interface for response object
-          };
-        }),
+  fetchOffers(): Observable<BeerOffer[]> {
+    return this.http.get<{ [key: string]: ResBeer}>('https://umy-ionic-angular.firebaseio.com/offered-beers.json').pipe(
+        map((res): BeerOffer[] => Object.keys(res).map(beerId => ({
+          id: beerId,
+        ...res[beerId],
+        }))),
     );
   }
 

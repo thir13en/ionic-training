@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
-import { Beer } from '@core/interfaces';
+import { Beer } from '@core/../../shared/models/interfaces';
 import { BeersService } from '@app/services';
 
 @Component({

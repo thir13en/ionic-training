@@ -6,7 +6,7 @@ import { NavController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { Beer } from '@core/interfaces';
+import { Beer } from '@core/../../../shared/models/interfaces';
 import { BeersService } from '@app/services';
 
 
